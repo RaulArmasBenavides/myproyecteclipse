@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0fbd3560-2a99-4fb7-9149-3a721f0eda55">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\MARCELO\\Documents\\NetBeansProjects\\ST2\\src\\REPORTS\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="idVenta" class="java.lang.Integer">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from DetalleVenta
+where idVenta = $P{idVenta}]]>
+	</queryString>
+	<field name="idVenta" class="java.lang.Integer"/>
+	<field name="idEquipo" class="java.lang.Integer"/>
+	<field name="Cantidad" class="java.lang.Integer"/>
+	<field name="Punit" class="java.lang.Float"/>
+	<field name="Importe" class="java.lang.Float"/>
+	<field name="IGV" class="java.lang.Float"/>
+	<field name="Neto" class="java.lang.Float"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="16"/>
+	</title>
+	<pageHeader>
+		<band height="41"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="52"/>
+	</columnHeader>
+	<detail>
+		<band height="223">
+			<textField>
+				<reportElement x="231" y="48" width="100" height="20" uuid="f4715ee0-01dc-45fd-87dc-d68b6a225389"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idEquipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="131" y="48" width="100" height="20" uuid="6553e3d7-d2a3-4fe1-a5e5-0bbd083a31e1"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idVenta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="331" y="48" width="100" height="20" uuid="d0e1346a-df36-4e75-8a99-98904aee97a9"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Cantidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="431" y="48" width="100" height="20" uuid="ba11c3cc-d2bd-4352-b287-671663746b79"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Punit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="531" y="48" width="100" height="20" uuid="4450914e-8bcc-4a54-9b85-23d8bcce63fd"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{Importe}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="631" y="48" width="100" height="20" uuid="eb38432f-d63a-4956-8a31-19a26173086d"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{IGV}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="131" y="28" width="100" height="20" uuid="8af268eb-c9d2-4cc8-b460-1977e010fcd6"/>
+				<textElement>
+					<font isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[IdVenta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="231" y="28" width="100" height="20" uuid="b4b3d467-4e98-4c01-bab6-7ab5ed196312"/>
+				<textElement>
+					<font isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[idEquipo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="331" y="28" width="100" height="20" uuid="99906bd8-de93-4f6a-987a-7d82df555acf"/>
+				<textElement>
+					<font isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="431" y="28" width="100" height="20" uuid="4293765a-035d-48b8-bcdb-be8b8df7eeab"/>
+				<textElement>
+					<font isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[P.unitario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="531" y="28" width="100" height="20" uuid="84c4218c-a86b-4e71-980a-757eaad62c55"/>
+				<textElement>
+					<font isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Importe]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="631" y="28" width="100" height="20" uuid="7145e626-4857-47c0-94ff-091eb0c43e00"/>
+				<textElement>
+					<font isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[IGV]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="124"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54"/>
+	</pageFooter>
+	<summary>
+		<band height="42"/>
+	</summary>
+</jasperReport>

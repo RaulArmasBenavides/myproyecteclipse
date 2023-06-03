@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idEmpleado" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from Empleado where idEmpleado = $P{idEmpleado}]]>
+	</queryString>
+	<field name="idEmpleado" class="java.lang.Integer"/>
+	<field name="idContrato" class="java.lang.String"/>
+	<field name="Nombre_Empleado" class="java.lang.String"/>
+	<field name="Apellidos" class="java.lang.String"/>
+	<field name="Sexo" class="java.lang.String"/>
+	<field name="Telefono" class="java.lang.String"/>
+	<field name="DNI" class="java.lang.String"/>
+	<field name="Direccion" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="64">
+			<staticText>
+				<reportElement x="184" y="22" width="200" height="20"/>
+				<textElement lineSpacing="Single">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BÚSQUEDA DE EMPLEADO]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="407" y="0" width="100" height="20"/>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="207">
+			<staticText>
+				<reportElement x="32" y="36" width="69" height="20"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[idEmpleado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="16" width="69" height="20"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[idContrato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="56" width="69" height="20"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[Nombre_Empleado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="76" width="69" height="20"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[Apellidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="96" width="69" height="20"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[Sexo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="116" width="69" height="20"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[Telefono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="136" width="69" height="20"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[DNI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="32" y="156" width="69" height="20"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[Direccion]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="101" y="76" width="83" height="20"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Apellidos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="101" y="56" width="83" height="20"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Nombre_Empleado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="101" y="36" width="83" height="20"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{idEmpleado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="101" y="16" width="83" height="20"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{idContrato}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="101" y="96" width="83" height="20"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Sexo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="101" y="116" width="83" height="20"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Telefono}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="101" y="136" width="83" height="20"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{DNI}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="101" y="156" width="83" height="20"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Direccion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<columnFooter>
+		<band height="45"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54"/>
+	</pageFooter>
+	<summary>
+		<band height="42"/>
+	</summary>
+</jasperReport>

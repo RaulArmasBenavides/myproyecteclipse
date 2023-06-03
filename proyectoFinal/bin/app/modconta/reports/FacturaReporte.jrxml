@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table" lineSpacing="Single">
+		<box>
+			<pen lineWidth="1.0" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#4E4E6F" lineSpacing="Single">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#CFCFE6" lineSpacing="Single">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF" lineSpacing="Single">
+		<box>
+			<pen lineWidth="0.5" lineColor="#FFFFFF"/>
+		</box>
+	</style>
+	<style name="table 1" lineSpacing="Single">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF" lineSpacing="Single">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF" lineSpacing="Single">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF" lineSpacing="Single">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2" lineSpacing="Single">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF" lineSpacing="Single">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF" lineSpacing="Single">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF" lineSpacing="Single">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style backcolor="#EFF7FF" lineSpacing="Single"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="New Dataset 1">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     Cliente."idCliente" AS Cliente_idCliente,
+     Cliente."Nombre_Cliente" AS Cliente_Nombre_Cliente,
+     Cliente."Apellidos" AS Cliente_Apellidos,
+     Cliente."Telefono" AS Cliente_Telefono
+FROM
+     "dbo"."Cliente" Cliente]]>
+		</queryString>
+		<field name="Cliente_Nombre_Cliente" class="java.lang.String"/>
+		<field name="Cliente_idCliente" class="java.lang.Integer"/>
+		<field name="Cliente_Apellidos" class="java.lang.String"/>
+		<field name="Cliente_Telefono" class="java.lang.String"/>
+		<group name="Cliente_Nombre_Cliente">
+			<groupExpression><![CDATA[$F{Cliente_Nombre_Cliente}]]></groupExpression>
+		</group>
+		<group name="Cliente_Apellidos">
+			<groupExpression><![CDATA[$F{Cliente_Apellidos}]]></groupExpression>
+		</group>
+		<group name="Cliente_idCliente">
+			<groupExpression><![CDATA[$F{Cliente_idCliente}]]></groupExpression>
+		</group>
+	</subDataset>
+	<subDataset name="New Dataset 2"/>
+	<subDataset name="Table Dataset 1">
+		<field name="Nombre_Cliente" class="java.lang.String"/>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT * from Cliente]]>
+	</queryString>
+	<field name="idCliente" class="java.lang.Integer"/>
+	<field name="Nombre_Cliente" class="java.lang.String"/>
+	<field name="Apellidos" class="java.lang.String"/>
+	<field name="Telefono" class="java.lang.String"/>
+	<field name="Direccion" class="java.lang.String"/>
+	<field name="Sexo" class="java.lang.String"/>
+	<field name="DNI" class="java.lang.String"/>
+	<field name="RUC" class="java.lang.String"/>
+	<title>
+		<band height="96">
+			<rectangle>
+				<reportElement x="288" y="20" width="280" height="58"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="408" y="20" width="144" height="20"/>
+				<textElement lineSpacing="Single">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Factura electrónica]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="357" y="40" width="100" height="20"/>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[RUC]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="40"/>
+	</pageHeader>
+	<summary>
+		<band height="201">
+			<staticText>
+				<reportElement x="384" y="63" width="100" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[Subtotal ventas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="384" y="83" width="100" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[Descuento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="384" y="103" width="100" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[Valor de venta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="384" y="123" width="100" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[IGV]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="384" y="143" width="100" height="20"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement lineSpacing="Single"/>
+				<text><![CDATA[Static text]]></text>
+			</staticText>
+			<break>
+				<reportElement x="0" y="92" width="100" height="1"/>
+			</break>
+			<staticText>
+				<reportElement x="26" y="77" width="100" height="20"/>
+				<textElement lineSpacing="Single">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[RUC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="26" y="97" width="100" height="20"/>
+				<textElement lineSpacing="Single">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Tipo de moneda]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="26" y="37" width="100" height="20"/>
+				<textElement lineSpacing="Single">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Fecha de emisión]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="56" y="57" width="70" height="20"/>
+				<textElement lineSpacing="Single">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Señor(es)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="17" width="125" height="20"/>
+				<textElement lineSpacing="Single">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Fecha de vencimiento ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="149" y="57" width="100" height="20"/>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Nombre_Cliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="149" y="77" width="100" height="20"/>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{RUC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="149" y="97" width="117" height="20"/>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Direccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="149" y="37" width="100" height="20"/>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Sexo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="149" y="17" width="100" height="20"/>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{Telefono}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
