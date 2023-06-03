@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ea419035-d115-4eed-a44b-554eaf498400">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\MARCELO\\Documents\\NetBeansProjects\\ST2\\src\\REPORTS\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[select * from Servicio]]>
+	</queryString>
+	<field name="FechaEntrega" class="java.lang.String"/>
+	<field name="idServicio" class="java.lang.Integer"/>
+	<field name="FechaRecibido" class="java.lang.String"/>
+	<field name="idVenta" class="java.lang.Integer"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="78">
+			<image>
+				<reportElement x="460" y="0" width="115" height="49" uuid="7b785bef-676f-47e2-9637-f6f66ca879a8"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<imageExpression><![CDATA["C:\\Users\\MARCELO\\Documents\\NetBeansProjects\\ST2\\src\\WALLPAPERS\\RESETPERU.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="11" y="49" width="499" height="20" uuid="6dd519b5-a12f-4db1-99ed-fadd3b7740c5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true" isItalic="false" isUnderline="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[FICHA DE SOPORTE TÉCNICO]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="79">
+			<textField>
+				<reportElement x="10" y="49" width="200" height="20" uuid="bc00df3b-0165-49db-aa95-e1b024a4bf86"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FechaRecibido}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="10" y="29" width="200" height="20" uuid="d46940b3-29cb-47ac-b5e6-9e69c8c5bd0c"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[FECHA DE RECIBIDO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="210" y="49" width="200" height="20" uuid="d2aa8577-7594-460a-8d1f-2eb2a771d777"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FechaEntrega}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="49" width="110" height="20" uuid="95d2e5ed-b803-45f8-b8ad-86a80857c707"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idVenta}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="210" y="29" width="200" height="20" uuid="b2882d3f-5bf4-438d-a7f3-ad2fbc236a63"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[FECHA DE ENTREGA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="410" y="29" width="110" height="20" uuid="c8803fbb-7b9b-4898-9386-9f40ee685598"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[NÚMERO DE VENTA]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="339">
+			<staticText>
+				<reportElement x="10" y="10" width="500" height="22" uuid="9498356d-3bea-4958-9ee1-5018b0c89656"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[DATOS DEL TÉCNICO ENCARGADO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="66" width="100" height="20" uuid="94fde789-2dd8-4e37-8517-cf60b50f9f94"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="46" width="100" height="20" uuid="fe672fc6-c1b5-4cfe-ae76-ae3950b47415"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[idEmpleado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="265" y="46" width="100" height="20" uuid="986016c9-1d75-4dab-88fe-789293ebfb15"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Telefono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="265" y="66" width="100" height="20" uuid="8a7e5c6f-7d33-411f-91cc-3695d21b73ee"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Apellidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="113" width="100" height="20" uuid="eb9404d3-04c4-41af-b586-7ae8e271af2e"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Tienda]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="133" width="500" height="22" uuid="b8a1723c-ad49-4227-bbc1-5e7df545f5f7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[EQUIPO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<columnFooter>
+		<band height="45"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54"/>
+	</pageFooter>
+	<summary>
+		<band height="42"/>
+	</summary>
+</jasperReport>
